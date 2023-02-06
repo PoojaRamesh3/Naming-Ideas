@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/naming-ideas/static/css/main.ef20cfe4.css",
+    "main.js": "/naming-ideas/static/js/main.2dea301c.js",
+    "index.html": "/naming-ideas/index.html",
+    "main.ef20cfe4.css.map": "/naming-ideas/static/css/main.ef20cfe4.css.map",
+    "main.2dea301c.js.map": "/naming-ideas/static/js/main.2dea301c.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.ef20cfe4.css",
+    "static/js/main.2dea301c.js"
+  ]
+}
