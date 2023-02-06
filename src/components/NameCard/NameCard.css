@@ -1,0 +1,22 @@
+.result-name-card {
+    color: aliceblue;
+    background-color: #2f2069;
+    margin: 10px 15px;
+    min-width: 75px;
+    font-size: 20px;
+    padding: 10px 20px;
+    border-radius: 10px;
+    box-shadow: 19px 20px 20px 0px #673ab7;
+    text-align: center;
+    transition: background-color 0.33s;
+    font-weight: 600;
+}
+
+.result-name-card:hover {
+    background: #5b1edd;
+}
+
+a {
+    color: #fff;
+    text-decoration: none;
+}
