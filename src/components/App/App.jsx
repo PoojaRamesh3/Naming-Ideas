@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './App.css';
 import Header from '../Header/Header';
 import SearchBox from '../SearchBox/SearchBox';
@@ -6,39 +6,27 @@ import ResultsContainer from '../ResultsContainer/ResultsContainer';
 
 const name = require('@rstacruz/startup-name-generator');
 
-class App extends React.Component {
-    state = {
-        headerText: 'Naming Ideas!',
-        headerExpanded: true,
-        searchBoxExpanded: true,
-        suggestedNames: [],
-    };
+const App = () => {
+    const [headerText, setHeaderText] = useState('Naming Ideas!');
+    const [headerExpanded, setHeaderExpanded] = useState(true);
+    const [suggestedNames, setSuggestedNames] = useState([]);
 
     //CallBack Method- from Child Componenet and executing in Parent Componenet
-    handelInputChange = (inputText) => {
-        this.setState({
-            headerExpanded: !inputText,
-            suggestedNames: inputText ? name(inputText) : [],
-        });
+    const handelInputChange = (inputText) => {
+        setHeaderExpanded(!inputText);
+        setSuggestedNames(inputText ? name(inputText) : []);
     };
 
-    render() {
-        return (
-            <div>
-                <Header
-                    headProp={this.state.headerText}
-                    headerExpandProp={this.state.headerExpanded}
-                />
-                <SearchBox
-                    onInputChange={this.handelInputChange}
-                    searchBoxExpandProp={this.state.headerExpanded}
-                />
-                <ResultsContainer
-                    suggestedNamesProp={this.state.suggestedNames}
-                />
-            </div>
-        );
-    }
-}
+    return (
+        <div>
+            <Header headProp={headerText} headerExpandProp={headerExpanded} />
+            <SearchBox
+                onInputChange={handelInputChange}
+                searchBoxExpandProp={headerExpanded}
+            />
+            <ResultsContainer suggestedNamesProp={suggestedNames} />
+        </div>
+    );
+};
 
 export default App;
